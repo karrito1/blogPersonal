@@ -50,66 +50,66 @@ const CrearArticulo = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-black px-4">
       <form
         onSubmit={guardar}
-        className="w-full max-w-lg bg-white p-6 rounded-2xl shadow-lg flex flex-col gap-4"
+        className="w-full max-w-lg bg-zinc-900 p-6 rounded-2xl shadow-xl flex flex-col gap-4"
       >
-        <h2 className="text-2xl font-bold text-center text-gray-800">
+        <h2 className="text-2xl font-bold text-center text-white">
           Crear Artículo
         </h2>
 
         {/* Título */}
         <div>
-          <label className="text-sm font-medium text-gray-600">Título</label>
+          <label className="text-sm font-medium text-gray-300">Título</label>
           <input
             type="text"
             name="titulo"
             onChange={cambiado}
-            className="w-full mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mt-1 p-3 bg-zinc-800 text-white border border-zinc-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
             placeholder="Escribe el título"
           />
         </div>
 
         {/* Contenido */}
         <div>
-          <label className="text-sm font-medium text-gray-600">Contenido</label>
+          <label className="text-sm font-medium text-gray-300">Contenido</label>
           <textarea
             name="contenido"
             onChange={cambiado}
             rows={4}
-            className="w-full mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mt-1 p-3 bg-zinc-800 text-white border border-zinc-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
             placeholder="Escribe el contenido"
           />
         </div>
 
         {/* Fecha */}
         <div>
-          <label className="text-sm font-medium text-gray-600">Fecha</label>
+          <label className="text-sm font-medium text-gray-300">Fecha</label>
           <input
             type="date"
             name="fecha"
             onChange={cambiado}
-            className="w-full mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mt-1 p-3 bg-zinc-800 text-white border border-zinc-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
           />
         </div>
 
         {/* Imagen */}
         <div>
-          <label className="text-sm font-medium text-gray-600">Imagen (URL)</label>
+          <label className="text-sm font-medium text-gray-300">Imagen</label>
           <input
             type="text"
             name="imagen"
             onChange={cambiado}
-            className="w-full mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="https://..."
+            className="w-full mt-1 p-3 bg-zinc-800 text-white border border-zinc-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+            placeholder="URL de la imagen"
           />
         </div>
 
         {/* Botón */}
         <button
           disabled={loading}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition disabled:opacity-50"
+          className="bg-white text-black font-semibold py-3 rounded-lg hover:bg-gray-200 transition disabled:opacity-50"
         >
           {loading ? "Creando..." : "Crear Artículo"}
         </button>
