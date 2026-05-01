@@ -2,8 +2,8 @@
 // las variables globales de la aplicacion
 import app from "./app.js";
 
-const port = 3000 || process.env.port;
+const PORT = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log("Servidor corriendo en puerto " + PORT);
 });

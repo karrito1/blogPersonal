@@ -1,5 +1,7 @@
 import useFormulario from "../../hooks/useFormulario";
 
+const API = "https://blogpersonal-1-os0b.onrender.com/";
+
 const CrearArticulo = () => {
   const { form, cambiado, limpiarFormulario } = useFormulario({
     titulo: "",
@@ -12,16 +14,13 @@ const CrearArticulo = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "http://localhost:3000/api/articulo/crearArticulo",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form),
+      const response = await fetch(`${API}/api/articulo/crearArticulo`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(form),
+      });
 
       if (!response.ok) {
         throw new Error("Error al crear artículo");
@@ -44,27 +43,22 @@ const CrearArticulo = () => {
         <legend className="fieldset-legend">Formulario de registro</legend>
 
         <form onSubmit={guardar} className="flex flex-col gap-2 m-10">
-          {/* TÍTULO */}
           <label className="label">Título</label>
           <input
             type="text"
             className="input input-bordered w-full"
             onChange={cambiado}
             name="titulo"
-            placeholder="Título del artículo"
           />
 
-          {/* CONTENIDO */}
           <label className="label">Contenido</label>
           <input
             type="text"
             className="input input-bordered w-full"
             onChange={cambiado}
             name="contenido"
-            placeholder="Contenido del artículo"
           />
 
-          {/* FECHA */}
           <label className="label">Fecha</label>
           <input
             type="date"
@@ -73,17 +67,14 @@ const CrearArticulo = () => {
             name="fecha"
           />
 
-          {/* IMAGEN (RUTA o URL) */}
           <label className="label">Imagen</label>
           <input
             type="text"
             className="input input-bordered w-full"
             onChange={cambiado}
             name="imagen"
-            placeholder="/uploads/foto.jpg o URL"
           />
 
-          {/* BOTÓN */}
           <button className="btn btn-primary mt-4 w-full">
             Crear Artículo
           </button>
