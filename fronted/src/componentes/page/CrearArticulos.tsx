@@ -1,6 +1,6 @@
 import useFormulario from "../../hooks/useFormulario";
 
-const API = "https://blogpersonal-1-os0b.onrender.com/";
+const API = "https://blogpersonal-3zgi.onrender.com/";
 
 const CrearArticulo = () => {
   const { form, cambiado, limpiarFormulario } = useFormulario({
